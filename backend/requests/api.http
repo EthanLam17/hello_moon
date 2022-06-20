@@ -1,8 +1,0 @@
-### Test
-
-GET http://127.0.0.1:5001/
-Content-Type: application/json
-
-
-
-### Get balance
