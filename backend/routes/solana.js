@@ -6,12 +6,12 @@ let connection = new solanaWeb3.Connection(solanaWeb3.clusterApiUrl('devnet'), '
 
 const router = express.Router();
 
-router.get('/', async (req, res) => {
+router.get('/', async (_req, res) => {
   await connection.getLargestAccounts()
   .then(accounts => res.json(accounts.value))
 })
 
-router.get('/usd', async(req, res) => {
+router.get('/usd', async(_req, res) => {
   await axios.get('https://pro-api.coinmarketcap.com/v2/cryptocurrency/quotes/latest?CMC_PRO_API_KEY=c92cae25-9f0b-4cec-85ac-1613bb738fe8&slug=solana')
   .then(data => res.json(data.data))
 })
